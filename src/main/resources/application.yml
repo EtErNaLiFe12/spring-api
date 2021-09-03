@@ -1,0 +1,40 @@
+ spring:
+   profiles:
+     active: local
+
+---
+# spring:
+#   application:
+#     name: demo
+#   profiles:
+#     active: local
+# server:
+#   port: 8989
+
+# spring:
+#   profiles: test
+
+# server:
+#   port: 3333
+#   tomcat:
+#     uri-encoding: UTF-8
+
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mariadb://10.177.194.30:3306/m_op_member?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+jpa:
+  open-in-view: false
+  generate-ddl: true
+  show-sql: true
+  format-sql: true
+  use-sql-comments: true
+  hibernate:
+    ddl-auto: update
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
+#server:
+#  port: 8989
